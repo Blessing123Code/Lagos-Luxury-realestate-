@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing website</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!--First page-->
+<section class="first active">
+    <h1>Find a Space You'll Love to Call Home</h1>
+    <p>Discover handpicked luxury properties, modern apartments, and dream spaces tailored to your lifestyle.</p>
+    <button id="browse">Explore Listings →</button>
+</section>
+
+<!--Second Page-->
+<section class="HomePage">
+    <header class="control">
+    <button class="back-home-btn" onclick="showScreen('first')">Back</button>
+        <div class="search">
+          <input type="text" id="searchInput"  placeholder="🔍 Search by title or location..">
+        </div>
+
+    <nav class="proptype">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="house">House</button>
+        <button class="filter-btn" data-category="shortlet">Shortlet</button>
+        <button class="filter-btn" data-category="land">Land</button>
+        <button class="filter-btn" data-category="apartment">Apartment</button>
+        <button class="filter-btn" data-category="duplex">Duplex</button>
+    </nav>
+    </header>
+     
+    <main class="view" id="propertyContainer">
+        <!--The Properties will be displayed from js -->
+    </main>
+</section>
+
+<!--Third page-->
+<section class="DetailPage" id="Detail">
+        <button class="btn" id="Back">Back to listing project</button>
+        
+        <div id="detailContent">
+        <!--The content will be displaye using js-->
+        </div>
+</section>
+
+<script src="./script.js"></script>
+</body>
+</html>

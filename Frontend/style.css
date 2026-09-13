@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --accent: #f59e0b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-muted: #64748b;
+    --radius-lg: 20px;
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+}
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+
+/* Screen Visibility */
+.first,
+.HomePage,
+.DetailPage {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.first.active,
+.HomePage.active,
+.DetailPage.active {
+    display: block;
+}
+
+/* Exciting Hero Section (Landing Page) */
+.first {
+    text-align: center;
+    padding: 6rem 1rem;
+}
+
+.first h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.first p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    font-weight: 600;
+    padding: 0.85rem 1.8rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#browse {
+    background: var(--primary);
+    color: white;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+#browse:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Header & Controls */
+.control {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.back-home-btn {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    align-self: flex-start;
+}
+
+.search input {
+    width: 100%;
+    max-width: 480px;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 1rem;
+    background: white;
+}
+
+.search input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.proptype {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+}
+
+.filter-btn {
+    background: white;
+    color: var(--text-muted);
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Modern Card Grid */
+.view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card-image-wrap {
+    position: relative;
+    height: 220px;
+}
+
+.card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.view-btn {
+    background: #f1f5f9;
+    color: var(--text-primary);
+    margin-top: auto;
+    width: 100%;
+}
+
+.view-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Detail View Layout */
+.detail-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: var(--text-primary);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #e2e8f0;
+}
+
+.detail-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.detail-info {
+    padding: 2.5rem;
+}
+
+.detail-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent);
+}
