@@ -1,4 +1,5 @@
 import os 
+import dj_database_url
 """
 Django settings for Property_listing project.
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-r-v=k-3cu)3h)sk2+7f06eb(n1ish%ev^-_m5fuwu_cnh9!981
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
