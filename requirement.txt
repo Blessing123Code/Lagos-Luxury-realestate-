@@ -1,0 +1,12 @@
+asgiref==3.12.1
+dj-database-url==3.1.2
+Django==6.1
+django-cors-headers==4.9.0
+django-filter==26.1
+djangorestframework==3.18.0
+gunicorn==26.2.0
+pillow==12.3.0
+sqlparse==0.6.0
+static3==0.7.0
+tzdata==2026.3
+whitenoise==6.12.0
