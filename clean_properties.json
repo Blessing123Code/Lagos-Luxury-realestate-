@@ -1,0 +1,7 @@
+[
+{
+    "model": "Houses.property",
+    "pk": 1,
+    "fields": {
+        "Title": "1 BED ROOM FLAT",
+        "Description": 
