@@ -1,0 +1,73 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$QDfp3MQeLWq3c0SEdUwwoM$FAoVD+68uhAsiKpay09963EKdbNTkcZhDCrHwUdtbbY=",
+        "last_login": "2026-09-01T12:04:35.313Z",
+        "is_superuser": true,
+        "username": "Blessing",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-08-28T20:16:41.045Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$xltqncHZpffTSG7ntcwGDQ$DB4hmBCHaq+5LuUTtOrnQI+k+Fn+EfGUlS0i+QjWMeI=",
+        "last_login": "2026-09-23T21:46:54.897Z",
+        "is_superuser": true,
+        "username": "blessing",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-09-23T15:20:55.908Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "59fv495uybsn624w7s77qg5ikpqdxa0a",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyEsbIP16N1vIMuySNXQpLQn479Lkx40c3vzZt4q0LaWsDVZwpTURYE6_bJI_JS6F-lB9T5rnuu6TFHvij7apm9zktf1cP8OCrXS1x68zyhO8IzDSAnJGo48CHUemUc0yTjoMehjtmIjQAJwjhkyovp8AeFiN7A:1x0317:_mJw-MH73iIEtKj5UgGYYWYFYgUKBmc5OwpIYwp3Mho",
+        "expire_date": "2026-09-11T20:17:37.080Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5jln1tlhbyf0h8hpswjb1xl23ovzvvth",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyEsbIP16N1vIMuySNXQpLQn479Lkx40c3vzZt4q0LaWsDVZwpTURYE6_bJI_JS6F-lB9T5rnuu6TFHvij7apm9zktf1cP8OCrXS1x68zyhO8IzDSAnJGo48CHUemUc0yTjoMehjtmIjQAJwjhkyovp8AeFiN7A:1x1NEB:jK1NMuCqpNmGlB_fudvY7bqLvSrL4atEhWYZzvgxQt0",
+        "expire_date": "2026-09-15T12:04:35.323Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "hh8yrbgs68a0rt9g9344dkq6xa29ug47",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSE8CiMu3fsNZAamUjU0Ke3K-O_SpAvdnnPufYuI21ri1niJUxYXYcTplxGmJ9dd5AfW-yzTXNdlIrkn8rBN3ubMr-vR_h0UbKWvtQuWgNI5eDMqjwMGywTBkCMmn5wmAM3Iqn_qrIwdAuAIoDpGZcXnC-WiN8U:1x9Unm:uVIBdqv3NMVYJ7L0pJvC1Ifnkdc4bjRzRodBViX-3tI",
+        "expire_date": "2026-10-07T21:46:54.909Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "rertk7zirwak859m0t0nb2g6uodplm5o",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyEsbIP16N1vIMuySNXQpLQn479Lkx40c3vzZt4q0LaWsDVZwpTURYE6_bJI_JS6F-lB9T5rnuu6TFHvij7apm9zktf1cP8OCrXS1x68zyhO8IzDSAnJGo48CHUemUc0yTjoMehjtmIjQAJwjhkyovp8AeFiN7A:1x1NE8:o8j9EvJRai-Ufvv7GXQejWBlOJgysuY5pkCiaNz9JjY",
+        "expire_date": "2026-09-15T12:04:32.801Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 1,
+    "fields": {
+        "Title": "1 BED ROOM FLAT",
+        "Description": 
