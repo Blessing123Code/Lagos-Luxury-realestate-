@@ -8,4 +8,4 @@ gunicorn
 pillow
 sqlparse
 static3
-tzdata
+tzdatawhitenoise
