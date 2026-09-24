@@ -4,4 +4,127 @@
     "pk": 1,
     "fields": {
         "Title": "1 BED ROOM FLAT",
-        "Description": 
+        "Description": "Experience the perfect balance of luxury and convenience in this ultra-modern 1-bedroom apartment located in the heart of Lekki Phase 1. Designed with crisp architectural lines, high ceilings, and floor-to-ceiling glass doors, this home offers a sunlit, open-plan living space crafted for modern professionals, young couples, or savvy short-let investors.\r\n​The residence features a fully fitted open kitchen with modern appliances, a spacious master suite with a walk-in wardrobe, and a stylish en-suite bathroom with premium sanitary fittings. Step out onto your private balcony to take in sweeping skyline views, or take advantage of world-class building amenities including 24/7 uninterrupted power, round-the-clock security, a rooftop lounge, and dedicated parking.",
+        "price": "100000.00",
+        "location": "Ikoyi Lagos",
+        "Property_type": "apartment",
+        "bathroom": 1,
+        "bedroom": 1,
+        "image": "property_photos/06a86cc5e885ca-1-apartment-in-ikoyi-for-rent-ikoyi-lagos1.webp",
+        "agent": 1,
+        "created_at": "2026-09-01T10:08:27Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 2,
+    "fields": {
+        "Title": "The Crestview mansion",
+        "Description": "Indulge in refined living with this extraordinary 10-bedroom, 10-bathroom architectural masterpiece. Designed for grand hosting and uncompromising comfort, the residence features expansive open-plan living zones bathed in natural light, a high-end chef's kitchen, and dedicated staff quarters. Step outside into a private sanctuary highlighted by a sparkling swimming pool, manicured grounds, and a sun-drenched lounge deck. Situated in an exclusive, high-security neighborhood, this trophy property offers the ultimate blend of privacy, luxury, and location.",
+        "price": "10000000.00",
+        "location": "Ajah, Lagos Island.",
+        "Property_type": "house",
+        "bathroom": 10,
+        "bedroom": 10,
+        "image": "property_photos/1.webp",
+        "agent": 1,
+        "created_at": "2026-09-07T13:58:25Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 3,
+    "fields": {
+        "Title": "Sea Breeze 2-Bedroom Luxury Waterfront Apartment",
+        "Description": "If you have ever dreamed of living right by the Atlantic, this fabulous luxury urban apartment situated along the prestigious coastline of Eko Atlantic City in Lagos might just be your dream come true. This luxury seaside residence was envisioned to sit so close to the water that it gives occupants a sense of hovering directly over the ocean. Purposely designed with floor-to-ceiling glass panels that allow residents to visually explore an endless expanse of blue before them, the panoramic ocean views are transcendent and reverently awe-inspiring.\r\n​This luxurious Sea Breeze two-bedroom apartment includes 250 sq. m (2,691 sq. ft.) of spacious living area with a large open floor plan that enjoys direct sunlight and natural sea breezes from all directions. Decorated with bespoke Armani and Fendi Casa designer furnishings, a sophisticated coordinated palette of beige, gold, and deep charcoal accents augments the interior spaces to provide an inspiring aesthetic of rich, modern luxury.\r\n​Shaped with an acumen of space and continuous volume oriented toward sensational vistas, this incredible waterfront residence offers a harmonious blend of spectacular city skylines, translucent Atlantic waves, and majestic ocean breezes.",
+        "price": "1250000.00",
+        "location": "Eko Atlantic City, VI, Lagos",
+        "Property_type": "apartment",
+        "bathroom": 2,
+        "bedroom": 2,
+        "image": "property_photos/02-Sea-Breeze-Luxury-Apartment-3-Tel-Aviv-Israel.jpg",
+        "agent": 1,
+        "created_at": "2026-09-07T14:18:53Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 4,
+    "fields": {
+        "Title": "The Lumina  5-Bedroom Contemporary Mansion",
+        "Description": "Step into the pinnacle of modern architectural design with this ultra-luxurious, contemporary 5-bedroom mansion located in the highly coveted enclave of Banana Island. Featuring bold geometric concrete accents, cantilevered glass facades, and seamlessly integrated warm ambient lighting, this residence presents a striking silhouette against the horizon.\r\n​The interior boasts double-volume ceilings, expansive living rooms bounded by floor-to-ceiling glass walls, a private infinity pool overlooking manicured grounds, and custom smart-home automation throughout. Complete with a private elevator, multi-car underground garage, and dedicated service quarters, this trophy home offers unmatched sophistication and absolute security for the discerning homeowner.",
+        "price": "3500000.00",
+        "location": "Banana island, ikoyi, Lagos",
+        "Property_type": "house",
+        "bathroom": 5,
+        "bedroom": 5,
+        "image": "property_photos/4_h.webp",
+        "agent": 1,
+        "created_at": "2026-09-07T14:31:33Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 5,
+    "fields": {
+        "Title": "The Twin-Gable 4-Bedroom Semi-Detached Duplex",
+        "Description": "Discover modern suburban elegance in this freshly completed 4-bedroom semi-detached duplex, located in a quiet, gated residential enclave in Lekki Phase 1. Featuring a striking symmetrical facade with dual private garages, grey exterior finishes, and large windows, this home offers the perfect balance of security, style, and functionality.\r\n​Inside, the home boasts a functional modern floor plan with high ceilings, en-suite bedrooms, a sleek contemporary kitchen, and bright living areas bathed in natural light. Designed with dual garage parking and a wide paved driveway, this property is ideal for families or smart investors looking for premium rental yields in a high-demand neighborhood.",
+        "price": "450000.00",
+        "location": "Lekki Phase 1, Lagos",
+        "Property_type": "duplex",
+        "bathroom": 5,
+        "bedroom": 4,
+        "image": "property_photos/du_2.jpg",
+        "agent": 1,
+        "created_at": "2026-09-07T14:41:47Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 6,
+    "fields": {
+        "Title": "The Velvet Oasis 2-Bedroom Executive",
+        "Description": "Step into refined comfort with this beautifully furnished 2-bedroom executive shortlet apartment in Lekki Phase 1. Designed for business travelers, staycations, and holiday seekers, the space features ambient recess lighting, sleek marble-finish tiled floors, plush velvet seating, and colorful accent chairs that bring warmth and character to the living room.\r\n​Enjoy modern living with a wall-mounted smart TV, high-speed Wi-Fi, fully fitted kitchen, and air conditioning throughout. Located minutes from top restaurants, nightlife, and shopping hubs, guests benefit from 24/7 uninterrupted power, round-the-clock estate security, and dedicated parking.",
+        "price": "150.00",
+        "location": "Admiralty Way, Lekki Phase 1",
+        "Property_type": "shortlet",
+        "bathroom": 2,
+        "bedroom": 2,
+        "image": "property_photos/6.webp",
+        "agent": 1,
+        "created_at": "2026-09-07T15:14:47Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 7,
+    "fields": {
+        "Title": "The Obsidian Minimalist 3-Bedroom Shortlet",
+        "Description": "Immerse yourself in modern sophistication with this premium 3-bedroom shortlet suite situated in prime Victoria Island. Designed with an emphasis on minimalist luxury, the spacious living room features moody charcoal and dark-toned contemporary seating, pristine high-gloss tiled flooring, a modern tray ceiling with recessed ambient lighting, and a prominent ceiling fan for optimal comfort.\r\n​Equipped with a wall-mounted Smart TV, high-speed fiber internet, and an open layout leading to a sleek dining space, this residence is tailored for executives, group travel, and luxury staycations. Guests enjoy 24/7 uninterrupted power, top-tier security, dedicated parking, and proximity to Lagos's finest dining and nightlife hubs.",
+        "price": "220.00",
+        "location": "Victoria Island, Lagos, Nigeria",
+        "Property_type": "shortlet",
+        "bathroom": 3,
+        "bedroom": 3,
+        "image": "property_photos/7.jpg",
+        "agent": 1,
+        "created_at": "2026-09-07T15:22:01Z"
+    }
+},
+{
+    "model": "Houses.property",
+    "pk": 8,
+    "fields": {
+        "Title": "The Sovereign Crest Prime Residential Plot",
+        "Description": "Secure a high-yield asset in the fast-developing economic hub of New Lagos with this prime 500 sq. m residential plot located in a gated, master-planned estate. Offering cleared, dry land with pre-installed paved access roads and clear property demarcations, this site is ideal for immediate residential development or long-term capital appreciation.\r\n​Situated along the booming Ibeju-Lekki corridor, the property sits close to key infrastructure projects including the Lekki Deep Sea Port, Dangote Refinery, and the proposed Lekki International Airport. The estate provides a secure investment environment featuring perimeter fencing, reliable drainage systems, and a verified Governor’s Consent title.",
+        "price": "65000.00",
+        "location": "Epe Express Corridor, Ibeju-Lekki, Lagos, Nigeria",
+        "Property_type": "land",
+        "bathroom": 1,
+        "bedroom": 1,
+        "image": "property_photos/10.webp",
+        "agent": 1,
+        "created_at": "2026-09-07T15:28:35Z"
+    }
+}
+]
