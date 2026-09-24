@@ -1,5 +1,41 @@
 [
 {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$QDfp3MQeLWq3c0SEdUwwoM$FAoVD+68uhAsiKpay09963EKdbNTkcZhDCrHwUdtbbY=",
+        "last_login": "2026-09-01T12:04:35.313Z",
+        "is_superuser": true,
+        "username": "Blessing",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-08-28T20:16:41.045Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$xltqncHZpffTSG7ntcwGDQ$DB4hmBCHaq+5LuUTtOrnQI+k+Fn+EfGUlS0i+QjWMeI=",
+        "last_login": "2026-09-23T21:46:54.897Z",
+        "is_superuser": true,
+        "username": "blessing",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-09-23T15:20:55.908Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "Houses.property",
     "pk": 1,
     "fields": {
