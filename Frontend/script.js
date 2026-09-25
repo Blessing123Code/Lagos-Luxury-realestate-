@@ -1,10 +1,10 @@
 // Live backend URL on Render
 const BACKEND_URL = 'https://lagos-luxury-realestate-1.onrender.com';
 
-// Global variable to store all properties fetched from Django
+// Global array to store fetched properties
 let allProperties = [];
 
-// Helper function: Prefixes relative Django media paths with active backend domain
+// Helper function: Prefix relative Django media paths with active backend domain
 function getImageUrl(imagePath) {
   if (!imagePath) return 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80';
   if (imagePath.startsWith('http')) return imagePath;
@@ -22,25 +22,23 @@ function showScreen(screenClass) {
   }
 }
 
-// 2. Set initial screen state on page load
+// 2. Initial view setup
 showScreen('first');
 
 // 3. Navigation Event Listeners
 const browseBtn = document.getElementById('browse');
 if (browseBtn) {
-  browseBtn.addEventListener('click', function() {
-    showScreen('HomePage');
-  });
+  browseBtn.addEventListener('click', () => showScreen('HomePage'));
 }
 
-// 4. Render Function for Property Cards
+// 4. Render Property Cards
 function renderProperties(properties) {
   const container = document.getElementById('propertyContainer');
   if (!container) return;
 
   container.innerHTML = '';
 
-  if (properties.length === 0) {
+  if (!properties || properties.length === 0) {
     container.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #64748b;">
         <h3>No matching properties found</h3>
@@ -50,18 +48,26 @@ function renderProperties(properties) {
     return;
   }
 
-  properties.forEach(function(property) {
-    // Resolve property fields matching Django property model
-    const title = property.title || property.name || 'Luxury Real Estate';
-    const propertyType = property.property_type || property.category || property.type || 'Featured';
-    const description = property.description ? property.description.substring(0, 90) + '...' : 'No description available.';
+  properties.forEach(item => {
+    const property = item.fields ? { id: item.pk, ...item.fields } : item;
+
+    // Check capitalized backend keys (Title, Description, Property_type) first
+    const title = property.Title || property.title || property.name || 'Untitled Property';
+    const rawType = property.Property_type || property.property_type || property.category || property.type || 'Property';
+    const rawDesc = property.Description || property.description || property.desc || property.details || '';
+    
+    const description = rawDesc 
+      ? (rawDesc.length > 90 ? rawDesc.substring(0, 90) + '...' : rawDesc)
+      : 'No description provided for this listing.';
+      
     const price = property.price ? Number(property.price).toLocaleString() : 'N/A';
+    const image = property.image || property.photo || '';
 
     container.innerHTML += `
       <div class="card">
         <div class="card-image-wrap">
-          <img src="${getImageUrl(property.image)}" alt="${title}">
-          <span class="badge">${propertyType.toUpperCase()}</span>
+          <img src="${getImageUrl(image)}" alt="${title}">
+          <span class="badge">${String(rawType).toUpperCase()}</span>
         </div>
         <div class="card-body">
           <h3>${title}</h3>
@@ -74,7 +80,7 @@ function renderProperties(properties) {
   });
 }
 
-// 5. Fetch All Properties (Home Page)
+// 5. Fetch Properties from Backend
 fetch(`${BACKEND_URL}/api/properties/`)
   .then(response => {
     if (!response.ok) throw new Error('Failed to fetch properties');
@@ -87,23 +93,25 @@ fetch(`${BACKEND_URL}/api/properties/`)
   })
   .catch(error => console.error('Error fetching properties:', error));
 
-// 6. Search and Filter Logic
+// 6. Search and Category Filter Logic
 function setupFiltersAndSearch() {
-  const searchInput = document.querySelector('.search input');
+  const searchInput = document.getElementById('searchInput') || document.querySelector('.search input');
   const filterBtns = document.querySelectorAll('.filter-btn');
 
-  let activeCategory = 'All';
-
-  function filterData() {
+  function applyFilter(categoryName) {
     const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const targetCategory = categoryName.toLowerCase().trim();
 
-    const filtered = allProperties.filter(property => {
-      const title = (property.title || property.name || '').toLowerCase();
-      const location = (property.location || '').toLowerCase();
-      const pType = (property.property_type || property.category || property.type || '').toLowerCase();
+    const filtered = allProperties.filter(item => {
+      const property = item.fields ? { id: item.pk, ...item.fields } : item;
 
-      const matchesSearch = title.includes(query) || location.includes(query);
-      const matchesCategory = activeCategory === 'All' || pType === activeCategory.toLowerCase();
+      // Read capitalized key names for filtering
+      const title = String(property.Title || property.title || property.name || '').toLowerCase();
+      const location = String(property.location || property.address || '').toLowerCase();
+      const pType = String(property.Property_type || property.property_type || property.category || '').toLowerCase().trim();
+
+      const matchesSearch = query === '' || title.includes(query) || location.includes(query);
+      const matchesCategory = targetCategory === 'all' || pType === targetCategory || pType.includes(targetCategory) || targetCategory.includes(pType);
 
       return matchesSearch && matchesCategory;
     });
@@ -112,34 +120,38 @@ function setupFiltersAndSearch() {
   }
 
   filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.onclick = function(e) {
+      e.preventDefault();
       filterBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-      activeCategory = this.textContent.trim();
-      filterData();
-    });
+      const category = this.textContent.trim();
+      applyFilter(category);
+    };
   });
 
   if (searchInput) {
-    searchInput.addEventListener('input', filterData);
+    searchInput.oninput = () => {
+      const activeBtn = document.querySelector('.filter-btn.active');
+      const category = activeBtn ? activeBtn.textContent.trim() : 'All';
+      applyFilter(category);
+    };
   }
 }
 
-// 7. Fetch Single Property Details (Detail Page)
+// 7. Detail Page Logic
 function openDetailPage(id) {
   fetch(`${BACKEND_URL}/api/properties/${id}/`)
-    .then(response => {
-      if (!response.ok) throw new Error('Failed to fetch property details');
-      return response.json();
-    })
-    .then(property => {
-      const detailContainer = document.querySelector('.DetailPage');
+    .then(response => response.json())
+    .then(data => {
+      const property = data.fields ? { id: data.pk, ...data.fields } : data;
+      const detailContainer = document.getElementById('detailContent');
       if (!detailContainer) return;
 
-      const title = property.title || property.name || 'Property Detail';
+      const title = property.Title || property.title || property.name || 'Property Detail';
       const price = property.price ? Number(property.price).toLocaleString() : 'N/A';
-      const description = property.description || 'No detailed description provided for this listing.';
-      const location = property.location ? `<p class="location" style="color: #475569; margin-top: 0.5rem;">📍 ${property.location}</p>` : '';
+      const description = property.Description || property.description || property.desc || 'No detailed description provided for this listing.';
+      const location = property.location || property.address ? `<p class="location" style="color: #475569; margin-top: 0.5rem;">📍 ${property.location || property.address}</p>` : '';
+      const image = property.image || property.photo || '';
 
       detailContainer.innerHTML = `
         <div class="detail-nav" style="margin-bottom: 1.5rem;">
@@ -148,7 +160,7 @@ function openDetailPage(id) {
         </div>
         
         <div class="detail-card">
-          <img src="${getImageUrl(property.image)}" class="detail-image" alt="${title}" style="max-width: 100%; border-radius: 8px;">
+          <img src="${getImageUrl(image)}" class="detail-image" alt="${title}" style="max-width: 100%; border-radius: 8px;">
           <div class="detail-info">
             <h2>${title}</h2>
             ${location}
